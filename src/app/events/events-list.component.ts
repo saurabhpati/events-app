@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: './events-list.component.html'
 })
 export class EventsListComponent {
-    event = {
+    private event = {
         id: 1,
         name: 'Angular Connect',
         date: '9/26/2036',
