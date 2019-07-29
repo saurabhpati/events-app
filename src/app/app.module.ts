@@ -8,7 +8,7 @@ import { NavbarComponent } from './nav/navbar.component';
 import { EventService } from './events/shared/event.service';
 import { ToasterService } from './common/toastr.service';
 import { RouterModule } from '@angular/router';
-import { routes } from '../routes/route';
+import { appRoutes } from '../routes/appRoutes';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { EventRouteActivatorService } from './events/shared/event-route-activator.service';
@@ -36,7 +36,7 @@ const checkDirtyState = ({ isDirty }: CreateEventComponent) => {
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     EventService,

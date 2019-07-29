@@ -7,10 +7,11 @@ import { EventRouteActivatorService } from 'src/app/events/shared/event-route-ac
 import { CONSTANTS } from 'src/utils/constants';
 import { EventsListResolver } from 'src/app/events/events-list/events-list-resolver.service';
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
     { path: 'events/new', component: CreateEventComponent, canDeactivate: [CONSTANTS.CREATE_EVENT_ROUTE_GUARD] },
     { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivatorService] },
     { path: 'events', component: EventsListComponent, resolve: { events: EventsListResolver } },
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/events', pathMatch: 'full' },
+    { path: 'user', loadChildren: '../app/user/user.module#UserModule'},
 ];
