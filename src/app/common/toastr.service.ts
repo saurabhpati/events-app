@@ -10,16 +10,13 @@ export class ToasterService {
 
     warning(message: string, title?: string) {
         toastr.warning(message, title);
-
     }
 
     info(message: string, title?: string) {
         toastr.info(message, title);
-
     }
 
     error(message: string, title?: string) {
         toastr.error(message, title);
-
     }
 }
