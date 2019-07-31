@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToasterService } from '../../common/toastr.service';
 import { ActivatedRoute } from '@angular/router';
+import { ToasterService } from '../../common';
 
 @Component({
     templateUrl: './events-list.component.html'

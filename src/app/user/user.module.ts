@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { UserProfileComponent } from './profile.component';
 import { RouterModule } from '@angular/router';
-import { userRoutes } from 'src/routes/userRoutes';
+import { UserProfileComponent } from './profile.component';
+import { userRoutes } from '../../routes';
 
 @NgModule({
     declarations: [

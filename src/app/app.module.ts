@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { EventsListComponent } from './events/events-list/events-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail/event-thumbnail.component';
-import { NavbarComponent } from './nav/navbar.component';
-import { EventService } from './events/shared/event.service';
-import { ToasterService } from './common/toastr.service';
-import { RouterModule } from '@angular/router';
-import { appRoutes } from '../routes/appRoutes';
-import { EventDetailsComponent } from './events/event-details/event-details.component';
-import { CreateEventComponent } from './events/create-event/create-event.component';
-import { EventRouteActivatorService } from './events/shared/event-route-activator.service';
-import { Error404Component } from './errors/404.component';
-import { CONSTANTS } from 'src/utils/constants';
-import { EventsListResolver } from './events/events-list/events-list-resolver.service';
+import { 
+  EventsListComponent, 
+  EventThumbnailComponent,
+  EventService,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivatorService,
+  EventsListResolver, } from './events';
+import { NavbarComponent } from './nav';
+import { ToasterService } from './common';
+import { appRoutes } from '../routes';
+import { Error404Component } from './errors';
+import { CONSTANTS } from '../utils';
 
 const checkDirtyState = ({ isDirty }: CreateEventComponent) => {
   if (isDirty) {
