@@ -7,7 +7,7 @@ import { EventService } from '../shared';
     styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-    private event;
+    event;
 
     constructor(
         private readonly eventsService: EventService,
