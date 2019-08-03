@@ -1,9 +1,24 @@
-<div class="col-md-6">
-    <div>Edit User Profile here.</div>
-
-    <br>
-    <br>
-
-    <button class="btn btn-primary">Save</button>
-    <button class="btn btn-default">Cancel</button>
+<div>
+    <h1>Edit User Profile.</h1>
+    <hr>
+    
+    <div class="col-md-4">
+        <form [formGroup]="profileForm" (ngSubmit)="save(profileForm.value)" autocomplete="off" novalidate>
+            <div class="form-group">
+                <label for="firstName">First Name: </label>
+                <input placeholder="First Name..." required formControlName="firstName" id="firstName"
+                    type="text" />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name: </label>
+                <input placeholder="Last Name..." required formControlName="lastName" id="lastName"
+                    type="text" />
+            </div>
+    
+            <div>
+                <button class="btn btn-primary">Save</button>
+                <button class="btn btn-default" (click)="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -15,7 +15,6 @@ export class LoginComponent {
     }
 
     login(value) {
-        console.log(value);
         this.authService.login(value);
         this.router.navigate(['events']);
     }
