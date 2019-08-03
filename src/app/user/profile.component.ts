@@ -32,6 +32,10 @@ export class UserProfileComponent implements OnInit {
     }
 
     save(values) {
+        if (!this.profileForm.valid) {
+            return;
+        }
+        
         this.authService.updateUser(values);
         this.router.navigate(['events']);
     }
@@ -41,6 +45,10 @@ export class UserProfileComponent implements OnInit {
     }
 
     validate(control) {
-        return this.profileForm.controls['control'].valid || this.profileForm.controls['control'].untouched;
+        if (!this.profileForm.controls[control]) {
+            return true;
+        }
+
+        return this.profileForm.controls[control].valid || this.profileForm.controls[control].untouched;
     }
 }

@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
         CommonModule,
         RouterModule.forChild(userRoutes),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     providers: [],
 })
