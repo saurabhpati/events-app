@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @NgModule({
     declarations: [
         UserProfileComponent,
-        LoginComponent
+        LoginComponent,
     ],
     imports: [
         CommonModule,

@@ -10,7 +10,7 @@
         </div>
 
         <div class="form-group">
-            <label for="userName">Password: </label>
+            <label for="password">Password: </label>
             <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseOverLogin)">Required</em>
             <input required placeholder="Password..." type="password" id="password" name="password"
                 (ngModel)="password" />
