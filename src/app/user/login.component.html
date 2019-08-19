@@ -2,18 +2,23 @@
 <hr>
 
 <div class="col-md-4">
-    <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" novalidate>
         <div class="form-group">
             <label for="userName">User Name: </label>
-            <input placeholder="User Name..." type="text" id="userName" name="userName" (ngModel)="userName" />
+            <em *ngIf="loginForm.controls?.userName?.invalid && (loginForm.controls?.userName?.touched || mouseOverLogin)">Required</em>
+            <input required placeholder="User Name..." type="text" id="userName" name="userName" (ngModel)="userName" />
         </div>
 
         <div class="form-group">
             <label for="userName">Password: </label>
-            <input placeholder="Password..." type="password" id="password" name="password" (ngModel)="password" />
+            <em *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseOverLogin)">Required</em>
+            <input required placeholder="Password..." type="password" id="password" name="password"
+                (ngModel)="password" />
         </div>
 
-        <button class="btn btn-primary" type="submit">Login</button>
+        <span (mouseenter)="mouseOverLogin=true" (mouseleave)="mouseOverLogin=false">
+            <button class="btn btn-primary" [disabled]="loginForm.invalid" type="submit">Login</button>
+        </span>
         <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
     </form>
 </div>

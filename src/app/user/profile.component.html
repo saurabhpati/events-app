@@ -1,9 +1,23 @@
 <div class="col-md-6">
-    <div>Edit User Profile here.</div>
-
+    <h1>Edit User Profile here.</h1>
     <br>
     <br>
 
-    <button class="btn btn-primary">Save</button>
-    <button class="btn btn-default">Cancel</button>
+    <div class="col-md-6">
+        <form [formGroup]="profileForm" (ngSubmit)="save(profileForm.value)" autocomplete="off" novalidate>
+            <div class="form-group" [ngClass]="{'error': !isFirstNameValid()}">
+                <label for="firstName">First Name: </label>
+                <em *ngIf="!isFirstNameValid()">Required</em>
+                <input placeholder="First Name..." id="firstName" formControlName="firstName" type="text" />
+            </div>
+            <div class="form-group" [ngClass]="!isLastNameValid()">
+                <label for="lastName">Last Name: </label>
+                <em *ngIf="!isLastNameValid()">Required</em>
+                <input placeholder="Last Name..." id="lastName" formControlName="lastName" type="text" />
+            </div>
+
+            <button class="btn btn-primary" (click)="save()">Save</button>
+            <button class="btn btn-default" (click)="cancel()">Cancel</button>
+        </form>
+    </div>
 </div>
